@@ -197,17 +197,33 @@ Fig. 2: data flow diagram
 \end{center}
 
 \section{System Architecture}
+To the design specification, we need to consider that the system involves the hardware part and the software part.
+Thus, we need to obey the design specification as following:
+
+\begin{enumerate}[1.]
+    \item Provide a network interface, to make sure the system's scalability.
+    \item Ensure the security of the system and the rubustness of the system, to make sure the system's reliability that could operate under any harsh conditions.
+    \item Using more standard and open source components, to make sure the system's maintainability and the system functions' development.
+\end{enumerate}
+
 
 \subsection{Hardware Architecture}
+
+The selection of the hardware components is mainly based on the following considerations:
+
+\begin{enumerate}[1.]
+    \item Provide a Internet controler chip, to send AT command by using the Socket protocol.
+    \item At lease exist a switch signal module, to control the open and close of the door lock.
+    \item Use an ARM based develop board as the network relay and have enough compute ability to handle the E-ink screen and massage handling.
+    \item The selected chip needs to support NFC-related protocols.
+\end{enumerate}
+
+In conclution, we choose the GD32 chip as the network relay, and the W5500 chip as the Internet controller chip.
+At the same time, for the smart E-ink NFC card, we choose the ST25DV chip as the NFC communication chip and the STM32L051 as the master control chip.
 \subsubsection{Smart E-ink NFC Card}
 
-\subsubsubsection{Hardware Architecture}
-
-\subsubsubsection{Hardware Design}
-
-\subsubsubsection{Hardware Implementation}
-
 \subsubsection{Smart Dook Lock System}
+
 
 \subsection{Software Architecture}
 
