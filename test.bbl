@@ -1,0 +1,105 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{coskun2013survey}{article}{}
+      \name{author}{3}{}{%
+        {{hash=eb161b3e2f060f1e0b2b8301f5811d81}{%
+           family={Coskun},
+           familyi={C\bibinitperiod},
+           given={Vedat},
+           giveni={V\bibinitperiod}}}%
+        {{hash=a40be69bcd9294e4196418c1d32ad91a}{%
+           family={Ozdenizci},
+           familyi={O\bibinitperiod},
+           given={Busra},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7707a71b58a1a96cc5ba8b27b10adc76}{%
+           family={Ok},
+           familyi={O\bibinitperiod},
+           given={Kerem},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3c9d3fa403282b263e59c2ab1f56e24f}
+      \strng{fullhash}{3c9d3fa403282b263e59c2ab1f56e24f}
+      \strng{bibnamehash}{3c9d3fa403282b263e59c2ab1f56e24f}
+      \strng{authorbibnamehash}{3c9d3fa403282b263e59c2ab1f56e24f}
+      \strng{authornamehash}{3c9d3fa403282b263e59c2ab1f56e24f}
+      \strng{authorfullhash}{3c9d3fa403282b263e59c2ab1f56e24f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Wireless personal communications}
+      \field{number}{3}
+      \field{title}{A survey on near field communication (NFC) technology}
+      \field{volume}{71}
+      \field{year}{2013}
+      \true{nocite}
+      \field{pages}{2259\bibrangedash 2294}
+      \range{pages}{36}
+    \endentry
+    \entry{ok2011exploring}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=7707a71b58a1a96cc5ba8b27b10adc76}{%
+           family={Ok},
+           familyi={O\bibinitperiod},
+           given={Kerem},
+           giveni={K\bibinitperiod}}}%
+        {{hash=8ed6a60b3e79d3258b538d476d4ef206}{%
+           family={Aydin},
+           familyi={A\bibinitperiod},
+           given={Mehmet\bibnamedelima N},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=eb161b3e2f060f1e0b2b8301f5811d81}{%
+           family={Coskun},
+           familyi={C\bibinitperiod},
+           given={Vedat},
+           giveni={V\bibinitperiod}}}%
+        {{hash=a40be69bcd9294e4196418c1d32ad91a}{%
+           family={Ozdenizci},
+           familyi={O\bibinitperiod},
+           given={Busra},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{29a82a8559832d5a69b3866722e62da6}
+      \strng{fullhash}{804266b14b1d00452b36e040055eb4d7}
+      \strng{bibnamehash}{29a82a8559832d5a69b3866722e62da6}
+      \strng{authorbibnamehash}{29a82a8559832d5a69b3866722e62da6}
+      \strng{authornamehash}{29a82a8559832d5a69b3866722e62da6}
+      \strng{authorfullhash}{804266b14b1d00452b36e040055eb4d7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Third International Conference on Information and Financial Engineering, Singapore}
+      \field{title}{Exploring underlying values of NFC applications}
+      \field{year}{2011}
+      \true{nocite}
+      \field{pages}{290\bibrangedash 294}
+      \range{pages}{5}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
