@@ -167,7 +167,8 @@ However, the ST25DV is only responsible for NFC communication with mobile phones
 In the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the backend.
 
 For the backend development, we used Java and Kotlin language, the main stream Spring Boot framework and MySQL database as the basis for the development and running on the cloud platform.
-For security, we use the Shiro security rights management framework, the JWT single sign-on module to verify the user's identity, and all the network requests and background function calls are stored in the Log4j2 database.
+For security, we use the Shiro security rights management framework, the JWT single sign-on module to verify the user's identity.
+All the network requests and background function calls are stored in the Log4j2 database.
 
 The IC card simulation is quite simple, which we integrate a few UID chip, and shared the same antenna, and we can switch cards by a dial wheel. At the good side, we can treat L-ink as a collection of multiple individual cards, copying and swiping are straightforward, but in another hand, as many cards are added, the number of buttons will increase.
 
