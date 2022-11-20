@@ -225,6 +225,12 @@ At the same time, for the smart E-ink NFC card, we choose the ST25DV chip as the
 
 \subsubsection{Smart E-ink NFC Card}
 
+The smart E-ink NFC card has its own unique ID in the form of a \texttt{UUID}. And the Smart Door System can use the \texttt{UUID} to identify the card. The \texttt{UUID} is stored in the ST25DV chip, and the ST25DV chip is connected to the STM32L051 chip through the I2C bus. The STM32L051 chip is responsible for the display of the E-ink screen and the control of the NFC communication.
+
+The UUID of the smart E-ink NFC card is not unique, and it is a unique ID that you can find in the NFC card and the smart E-ink screen. In order to make the UUID unique, the smart E-ink NFC card must be attached to an NFC tag. The \texttt{UUID} is not simply a unique ID, but the unique ID that can be found in the NFC card, as well as the smart E-ink screen.
+
+It is important to note that the UUID is not necessarily unique. If a tag has multiple \texttt{UUID}s, the card will not be able to identify the card, and the Smart Door System will not be able to detect the smart E-ink screen.
+
 \subsubsection{Smart Door Lock System}
 
 
@@ -250,7 +256,10 @@ The multimeter is used to test the resistance of the hardware circuit, and it ca
 
 According multiple tests mentioned above, all the hardware validations showed that the hardware circuit works well.
 \subsection{Software Validation}
-For the back-end functional validation, we mainly use Postman to send post requests. The back-end will return the validation result.
+For the back-end functional validation, we mainly use Postman to send post requests. The back-end will return the validation result.Use Socket protocol to create TCP connection and send AT command to GD32 hardware.
+
+Software validation environment we used JDK11, MySQL8.
+
 
 \subsection{Summary}
 According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
