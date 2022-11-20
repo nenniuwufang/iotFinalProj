@@ -88,7 +88,7 @@ innertopmargin=\topskip,
         \vspace*{1.5cm}
             
         \Huge
-        \textbf{Final Project}
+        \textbf{The smart door lock and smart NFC card based on IOT}
             
         \vspace{3cm}    
         \huge
@@ -164,7 +164,7 @@ For hardware side, we mainly used 2$\times$IC chip, what are STM32L051 and ST25D
 
 ST25DV communicate with STM32 chip through I2C bus as NFC's PHY, which have 2 main functions, energy harvesting and NFC communication.
 However, the ST25DV is only responsible for NFC communication with mobile phones, not for the read and write funtion for IC card, thus the ST25DV only supports ISO 15693's RFID protocol, but the IC card we commonly use is for ISO 14443 protocol, so we cannot directly use this chip to simulate IC card.
-In the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the backend.
+In the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the back-end.
 
 For the backend development, we used Java and Kotlin language, the main stream Spring Boot framework and MySQL database as the basis for the development and running on the cloud platform.
 For security, we use the Shiro security rights management framework, the JWT single sign-on module to verify the user's identity.
@@ -230,7 +230,6 @@ At the same time, for the smart E-ink NFC card, we choose the ST25DV chip as the
 
 \subsection{Software Architecture}
 
-Git Test.
 
 \section{validation}
 \subsection{Hardware Validation}
@@ -251,11 +250,12 @@ The multimeter is used to test the resistance of the hardware circuit, and it ca
 
 According multiple tests mentioned above, all the hardware validations showed that the hardware circuit works well.
 \subsection{Software Validation}
+For the back-end functional validation, we mainly use Postman to send post requests. The back-end will return the validation result.
 
 \subsection{Summary}
 According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
 
-\section{Conclutions}
+\section{Conclusion}
 \subsection{Summary}
 \subsection{Future Works}
 
