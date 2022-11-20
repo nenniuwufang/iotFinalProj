@@ -160,11 +160,12 @@ Simultaneously, we also design a door lock system, which can be used to open the
 The system can also be used as a relay to control the power of the door lock.
 
 \subsection{Project Architecture}
-For hardware side, we mainly used 2$\times$IC chip, what are STM32L051 and ST25DV. The electronic ink screen is a $200 \times 200$ single color screen.
+For the Smart NFC Card, we mainly used 2$\times$IC chip, what are STM32L051 and ST25DV. The electronic ink screen is a $200 \times 200$ single color screen.
 
-ST25DV communicate with STM32 chip through I2C bus as NFC's PHY, which have 2 main functions, energy harvesting and NFC communication.
+ST25DV communicate with STM32 chip through I2C bus as NFC's Physical Layer, which have 2 main functions, the energy harvesting and the NFC communication.
 However, the ST25DV is only responsible for NFC communication with mobile phones, not for the read and write funtion for IC card, thus the ST25DV only supports ISO 15693's RFID protocol, but the IC card we commonly use is for ISO 14443 protocol, so we cannot directly use this chip to simulate IC card.
-In the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the back-end.
+
+For the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the back-end.
 
 For the backend development, we used Java and Kotlin language, the main stream Spring Boot framework and MySQL database as the basis for the development and running on the cloud platform.
 For security, we use the Shiro security rights management framework, the JWT single sign-on module to verify the user's identity.
@@ -225,17 +226,21 @@ At the same time, for the smart E-ink NFC card, we choose the ST25DV chip as the
 
 \subsubsection{Smart E-ink NFC Card}
 
+For the Smart E-ink NFC card, we integrated the NFC card simulater and a E-ink screen. The information on the E-ink screen can be updated by chip ST25DV, which can communicate with the phone by NFC protocol.
+
 The smart E-ink NFC card has its own unique ID in the form of a \texttt{UUID}. And the Smart Door System can use the \texttt{UUID} to identify the card. The \texttt{UUID} is stored in the ST25DV chip, and the ST25DV chip is connected to the STM32L051 chip through the I2C bus. The STM32L051 chip is responsible for the display of the E-ink screen and the control of the NFC communication.
 
-The UUID of the smart E-ink NFC card is not unique, and it is a unique ID that you can find in the NFC card and the smart E-ink screen. In order to make the UUID unique, the smart E-ink NFC card must be attached to an NFC tag. The \texttt{UUID} is not simply a unique ID, but the unique ID that can be found in the NFC card, as well as the smart E-ink screen.
+The \texttt{UUID} of the smart E-ink NFC card is not unique, and it is a unique ID that you can find in the NFC card and the smart E-ink screen. In order to make the \texttt{UUID} unique, the smart E-ink NFC card must be attached to an NFC tag. The \texttt{UUID} is not simply a unique ID, but the unique ID that can be found in the NFC card, as well as the smart E-ink screen.
 
-It is important to note that the UUID is not necessarily unique. If a tag has multiple \texttt{UUID}s, the card will not be able to identify the card, and the Smart Door System will not be able to detect the smart E-ink screen.
+It is important to note that the \texttt{UUID} is not necessarily unique. If a tag has multiple \texttt{UUID}s, the card will not be able to identify the card, and the Smart Door System will not be able to detect the smart E-ink screen.
 
 \subsubsection{Smart Door Lock System}
 
+For the Smart Door Lock System, we integrated the NFC card reader, the magnetic door lock and a 
+
 
 \subsection{Software Architecture}
-
+Using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database, and can be properly configured Web site, and can be well designed database and properly connected to the database.  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.  Consider its security, unauthorized third-party access, complete logs, etc.
 
 \section{validation}
 \subsection{Hardware Validation}
@@ -260,7 +265,7 @@ For the back-end functional validation, we mainly use Postman to send post reque
 
 Software validation environment we used JDK11, MySQL8.
 
-
+After several verification, the software function works well.
 \subsection{Summary}
 According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
 
