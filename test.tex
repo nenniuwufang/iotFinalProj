@@ -275,9 +275,15 @@ According to the hardware validation and the black-box test, the system works we
 \section{Conclusion}
 \subsection{Summary}
 
+We prepared this project mainly from two aspects (hardware and software). In terms of hardware, we designed a mini portable NFC smart card with screen. This smart card uses two IC chips, STM32L051 and ST25DV, and we added a 200*200 monochrome e-ink screen. We use the ST25DV for NFC communication with the cell phone. The STM32 is used to read and write to the IC card. In terms of software, we used a combination of JDK11, Spring Boot and MySQL infrastructure, which is a common combination in the market today. On this basis, we try some new technologies, such as Spring Data JPA, LayUI, etc. We also use a lot of excellent third-party libraries: JSON parsing, serialization and deserialization, database connection pools, etc. Both software and hardware aspects are integrated into this project.
+
+The project has the following advantages: first, it can store multiple cards and the card contents can be erased. Secondly, it has NFC specific function, thirdly, it has an e-ink screen and can display the content through APP (there are many advantages of e-ink screen, such as displaying some information on the smart card, and if it is lost, it can be retrieved through the information on the card), and finally we designed a door lock system, when the NFC reader receives the unlock signal from the smart NFC card, it can open the door lock by sending AT command to open the door lock. The system can also be used as a relay to control the power of the door lock.
+
 \subsection{Future Works}
 
-We are planning to shift from single color screen to RGB screen in the next hardware version.
+For the hardware of the Smart Card device, we had considered using the energy harvesting function of ST25DV to get the energy through the antenna while giving the transmission out for part of the MCU or other chips to use. Thus, most of the NFC reader's transmitting power are not the same. In some cell phones, to sense the power of about 30mw, while some cell phones are only 10mw.
+
+Therefore, we considered the use of additional battery solution, adding a CR2032 coin cell battery into the Smart Card device. Because the total power consumption of this system is extremely low, while the card is swiped is not power consumption, only when refreshing the electronic screen will consume a little power, and only in the case of insufficient power collection, the additional power consumption will be provided by the battery, if the electronic ink screen is refreshed 10 times a day, a button battery is enough to use for three years. Therefore this program is completely feasible.
 
 
 \nocite{*}
