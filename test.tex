@@ -229,8 +229,12 @@ At the same time, for the smart E-ink NFC card, we choose the ST25DV chip as the
 For the Smart NFC Card, we mainly used 2$\times$IC chip, what are STM32L051 and ST25DV. The electronic ink screen is a $200 \times 200$ single color screen.
 
 ST25DV communicate with STM32 chip through I2C bus as NFC's Physical Layer, which have 2 main functions, the energy harvesting and the NFC communication.
-However, the ST25DV is only responsible for NFC communication with mobile phones, not for the read and write funtion for IC card, thus the ST25DV only supports ISO 15693's RFID protocol, but the IC card we commonly use is for ISO 14443 protocol, so we cannot directly use this chip to simulate IC card.
 
+However, the ST25DV is only responsible for NFC communication with mobile phones to update those information on the E-ink screen, not for the read and write funtion for IC card. Thus, the ST25DV only supports ISO 15693's RFID protocol, but the IC card we commonly use is for ISO 14443 protocol, so we cannot directly use this chip to simulate IC card.
+
+For the UID chips, we integrated two UIC chips into the Smart NFC Card module, what could store 2 cards' information. The UID chips share the same antenna with the ST25DV chip. The change between different cards is realized by a two-position dial button.
+
+Besides, all the hardware mentioned above is powered by the internal integrated lithium battery, and the electronic ink screen will maintain the information on the screen when the battery is disconnected.
 
 \subsubsection{Smart Door Lock System}
 
@@ -240,7 +244,7 @@ For the Smart Door Lock System, we integrated the NFC card reader, the magnetic 
 \subsection{Software Architecture}
 Using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database, and can be properly configured Web site, and can be well designed database and properly connected to the database.  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.  Consider its security, unauthorized third-party access, complete logs, etc.
 
-\section{validation}
+\section{Validation}
 \subsection{Hardware Validation}
 
 For the hardware validation, we mainly use the simulation software, oscilloscope, DC source and the multimeter to test the hardware make sure there exist no unexpected bug in our device.
@@ -264,12 +268,16 @@ For the back-end functional validation, we mainly use Postman to send post reque
 Software validation environment we used JDK11, MySQL8.
 
 After several verification, the software function works well.
+
 \subsection{Summary}
 According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
 
 \section{Conclusion}
 \subsection{Summary}
+
 \subsection{Future Works}
+
+We are planning to shift from single color screen to RGB screen in the next hardware version.
 
 
 \nocite{*}
