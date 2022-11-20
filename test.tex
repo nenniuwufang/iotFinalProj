@@ -88,7 +88,7 @@ innertopmargin=\topskip,
         \vspace*{1.5cm}
             
         \Huge
-        \textbf{The smart door lock and smart NFC card based on IOT}
+        \textbf{The Smart NFC Door Lock System based on IOT}
             
         \vspace{3cm}    
         \huge
@@ -215,7 +215,7 @@ Thus, we need to obey the design specification as following:
 The selection of the hardware components is mainly based on the following considerations:
 
 \begin{enumerate}[1.]
-    \item Provide a Internet controler chip, to send AT command by using the Socket protocol.
+    \item Provide a Internet controller chip, to send AT command by using the Socket protocol.
     \item At lease exist a switch signal module, to control the open and close of the door lock.
     \item Use an ARM based develop board as the network relay and have enough compute ability to handle the E-ink screen and massage handling.
     \item The selected chip needs to support NFC-related protocols.
@@ -238,11 +238,15 @@ Besides, all the hardware mentioned above is powered by the internal integrated 
 
 \subsubsection{Smart Door Lock System}
 
-For the Smart Door Lock System, we integrated the NFC card reader, the magnetic door lock and a Internet controler to meet those needs.
+For the Smart Door Lock System, we integrated the NFC card reader, the magnetic door lock and a Internet controller to meet those needs.
+
+The door lock is controlled through the Internet. By sending different AT commands, the NFC card reader could recognize the card's ID, which could transmit the cards' information to the software side, 
 
 
 \subsection{Software Architecture}
-Using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database, and can be properly configured Web site, and can be well designed database and properly connected to the database.  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.  Consider its security, unauthorized third-party access, complete logs, etc.
+The back-end using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database, and can be properly configured Web site, and can be well designed database and properly connected to the database.  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.  Consider its security, unauthorized third-party access, complete logs, etc.
+
+The front-end page uses LayUI and zTree to implement the design of the page.
 
 \section{Validation}
 \subsection{Hardware Validation}
@@ -263,9 +267,11 @@ The multimeter is used to test the resistance of the hardware circuit, and it ca
 
 According multiple tests mentioned above, all the hardware validations showed that the hardware circuit works well.
 \subsection{Software Validation}
-For the back-end functional validation, we mainly use Postman to send post requests. The back-end will return the validation result.Use Socket protocol to create TCP connection and send AT command to GD32 hardware.
-
 Software validation environment we used JDK11, MySQL8.
+
+Use Socket protocol to create TCP connection and send AT command to GD32 hardware.
+
+For the back-end functional validation, we mainly use Postman to send post requests. The back-end will return the validation result.
 
 After several verification, the software function works well.
 
