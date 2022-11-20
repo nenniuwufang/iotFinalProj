@@ -240,13 +240,23 @@ Besides, all the hardware mentioned above is powered by the internal integrated 
 
 For the Smart Door Lock System, we integrated the NFC card reader, the magnetic door lock and a Internet controller to meet those needs.
 
-The door lock is controlled through the Internet. By sending different AT commands, the NFC card reader could recognize the card's ID, which could transmit the cards' information to the software side, 
+The door lock is controlled through the Internet. By sending different AT commands, the NFC card reader could recognize the card's ID, which could transmit the cards' information to the software side, which could manage the access control and have a record of every NFC card recognition.
 
 
 \subsection{Software Architecture}
 The back-end using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database, and can be properly configured Web site, and can be well designed database and properly connected to the database.  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.  Consider its security, unauthorized third-party access, complete logs, etc.
 
-The front-end page uses LayUI and zTree to implement the design of the page.
+The front-end page uses LayUI and zTree to implement the design of the page. 
+
+The sequence diagram of open door by card functions is shown in Figure 3.
+
+\newpage
+\begin{center}
+
+\includegraphics[scale=0.4]{pic3.png} \\
+Pic. 3  System Running Sequence Diagram
+
+\end{center}
 
 \section{Validation}
 \subsection{Hardware Validation}
@@ -279,13 +289,10 @@ After several verification, the software function works well.
 According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
 
 \section{Conclusion}
-\subsection{Summary}
 
 We prepared this project mainly from two aspects (hardware and software). In terms of hardware, we designed a mini portable NFC smart card with screen. This smart card uses two IC chips, STM32L051 and ST25DV, and we added a 200*200 monochrome e-ink screen. We use the ST25DV for NFC communication with the cell phone. The STM32 is used to read and write to the IC card. In terms of software, we used a combination of JDK11, Spring Boot and MySQL infrastructure, which is a common combination in the market today. On this basis, we try some new technologies, such as Spring Data JPA, LayUI, etc. We also use a lot of excellent third-party libraries: JSON parsing, serialization and deserialization, database connection pools, etc. Both software and hardware aspects are integrated into this project.
 
 The project has the following advantages: first, it can store multiple cards and the card contents can be erased. Secondly, it has NFC specific function, thirdly, it has an e-ink screen and can display the content through APP (there are many advantages of e-ink screen, such as displaying some information on the smart card, and if it is lost, it can be retrieved through the information on the card), and finally we designed a door lock system, when the NFC reader receives the unlock signal from the smart NFC card, it can open the door lock by sending AT command to open the door lock. The system can also be used as a relay to control the power of the door lock.
-
-\subsection{Future Works}
 
 For the hardware of the Smart Card device, we had considered using the energy harvesting function of ST25DV to get the energy through the antenna while giving the transmission out for part of the MCU or other chips to use. Thus, most of the NFC reader's transmitting power are not the same. In some cell phones, to sense the power of about 30mw, while some cell phones are only 10mw.
 
