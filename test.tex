@@ -229,6 +229,14 @@ At the same time, for the smart E-ink NFC card, we choose the ST25DV chip as the
 
 For the Smart NFC Card, we mainly used 2$\times$IC chip, what are STM32L051 and ST25DV. The electronic ink screen is a $200 \times 200$ single color screen.
 
+\begin{center}
+
+    \includegraphics[scale=0.2]{pic4.jpg} \\
+    Pic. 4  Smart E-ink NFC Card
+    
+\end{center}
+    
+
 ST25DV communicate with STM32 chip through I2C bus as NFC's Physical Layer, which have 2 main functions, the energy harvesting and the NFC communication.
 
 However, the ST25DV is only responsible for NFC communication with mobile phones to update those information on the E-ink screen, not for the read and write function for IC card. Thus, the ST25DV only supports ISO 15693's RFID protocol, but the IC card we commonly use is for ISO 14443 protocol, so we cannot directly use this chip to simulate IC card.
@@ -254,11 +262,12 @@ The sequence diagram of open door by card functions is shown in Figure 3.
 \begin{center}
 
 \includegraphics[scale=0.4]{pic3.png} \\
-Pic. 3  System Running Sequence Diagram
+Pic. 4  System Running Sequence Diagram
 
 \end{center}
 
 \section{Validation}
+
 \subsection{Hardware Validation}
 
 For the hardware validation, we mainly use the simulation software, oscilloscope, DC source and the multimeter to test the hardware make sure there exist no unexpected bug in our device.
