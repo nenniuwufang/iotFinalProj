@@ -18,7 +18,8 @@
 \usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{biblatex}
-
+\usepackage{multirow}
+\usepackage{makecell}
 \addbibresource{ref.bib}
 
 \hypersetup{
@@ -244,16 +245,15 @@ The door lock is controlled through the Internet. By sending different AT comman
 
 
 \subsection{Software Architecture}
-The back-end using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.
+The back-end using JAVA and Kotlin language as the basis for Spring Boot framework design and development of smart door lock system, through the single instance pattern to develop, using Spring Data persistence layer control MySQL database, and can be properly configured Web site, and can be well designed database and properly connected to the database.  The overall implementation of remote unlocking, access control management, user management, door opening records and other functions.
 
 The front-end page uses LayUI and zTree to implement the design of the page. 
 
 The sequence diagram of open door by card functions is shown in Figure 3.
 
-\newpage
 \begin{center}
 
-\includegraphics[scale=0.3]{pic3.png} \\
+\includegraphics[scale=0.4]{pic3.png} \\
 Pic. 3  System Running Sequence Diagram
 
 \end{center}
@@ -287,6 +287,22 @@ After several verification, the software function works well.
 
 \subsection{Summary}
 According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
+\begin{table}[H]
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|c|c|c|c|c|} 
+\hline
+Use Case No & Use Case Description                                                           & Operation Process                                                                                                             & Expected Result                                                                & Test Result  \\ 
+\hline
+open\_01    & Door lock opened                                                               & User swipes the card normally for verification                                                                                & Door opened successfully                                                       & Passed       \\ 
+\hline
+open\_02    & Card swipe fails                                                               & Unknown user swipes the card for verification                                                                                 & Card is not bound                                                              & Passed       \\ 
+\hline
+open\_03    & \begin{tabular}[c]{@{}c@{}}The user does not\\have the permission\end{tabular} & \begin{tabular}[c]{@{}c@{}}The user who has been frozen by the\\administrator to swipe the card for verification\end{tabular} & \begin{tabular}[c]{@{}c@{}}The door opening permission\\is frozen\end{tabular} & Passed       \\
+\hline
+\end{tabular}
+}
+\end{table}
 
 \section{Conclusion}
 
