@@ -165,14 +165,12 @@ The system can also be used as a relay to control the power of the door lock.
 For the Smart E-ink NFC card, we integrated the NFC card simulater and a E-ink screen to show some information on it. The information on the E-ink screen can be updated by chip ST25DV, which can communicate with the phone with a Android app under NFC protocol.
 
 The NFC card simulation is processed by the STM32L051 chip and data is stored in different UID chips. The STM32L051 can also communicate with the phone in another Android application to overwrite the NFC card data into the chip.
+In the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the back-end.
 
-For the door lock module, we used GD32 chip with W5500 Ethernet chip as a network relay to perform power-off and power-on operations by accepting AT commands from the back-end.
-
-For the backend development, we used Java and Kotlin language, the main stream Spring Boot framework and MySQL database as the basis for the development and running on the cloud platform.
+To the backend development, we used Java and Kotlin language, the main stream Spring Boot framework and MySQL database as the basis for the development and running on the cloud platform.
 For security, we use the Shiro security rights management framework, the JWT single sign-on module to verify the user's identity.
 All the network requests and background function calls are stored in the Log4j2 database.
-
-The IC card simulation is quite simple, which we integrate a few UID chip, and shared the same antenna, and we can switch cards by a dial wheel. At the good side, we can treat L-ink as a collection of multiple individual cards, copying and swiping are straightforward, but in another hand, as many cards are added, the number of buttons will increase.
+The IC card simulation is simple, which we integrate a few UID chip, and shared the same antenna, and we can switch cards by a dial wheel. At the good side, we can treat L-ink as a collection of multiple individual cards, copying and swiping are straightforward, but in another hand, as many cards are added, the number of buttons will increase.
 
 
 \section{Underlying Principle}
@@ -271,31 +269,26 @@ The sequence diagram of open door by card functions is shown in Figure 3.
 \subsection{Hardware Validation}
 
 For the hardware validation, we mainly use the simulation software, oscilloscope, DC source and the multimeter to test the hardware make sure there exist no unexpected bug in our device.
+The simulation software, we choose the Proteus, which is a professional circuit simulation software.
+The software is used to simulate the hardware circuit, and it can simulate the hardware circuit and the software program.
 
-For the simulation software, we choose the Proteus, which is a professional circuit simulation software.
-The simulation software is used to simulate the hardware circuit, and it can simulate the hardware circuit and the software program.
-
-For the oscilloscope, we use the Rigol DS1054Z, which is a 4-channel oscilloscope.
+We use the Rigol DS1054Z, which is a 4-channel oscilloscope.
 The oscilloscope is used to test the signal of the hardware circuit, and it can display the signal of the hardware circuit.
 
-For the DC source, we use the DS2482, which is a 16-bit ADC.
+To the DC source, we use the DS2482, which is a 16-bit ADC.
 The DC source is used to test the voltage of the hardware circuit, and it can display the voltage of the hardware circuit.
 
-For the multimeter, we use the Rigol DM3058, which is a 5.5-digit multimeter.
+The last validation is the multimeter, we use the Rigol DM3058, which is a 5.5-digit multimeter.
 The multimeter is used to test the resistance of the hardware circuit, and it can display the resistance of the hardware circuit.
 
 According multiple tests mentioned above, all the hardware validations showed that the hardware circuit works well.
 \subsection{Software Validation}
-Software validation environment we used JDK11, MySQL8.
+For the software validation environment, we used JDK11, MySQL8 to program.
 
-Use Socket protocol to create TCP connection and send AT command to GD32 hardware.
+We also write a few user cases to test the system's robustness. By using Socket protocol to create the TCP connection, and sending AT command to GD32 hardware.
 
-For the back-end functional validation, we mainly use Postman to send post requests. The back-end will return the validation result.
+For the back-end functional validation, we mainly use Postman to send post requests. And the back-end will return the validation result.
 
-After several verification, the software function works well.
-
-\subsection{Summary}
-According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
 \begin{table}[H]
     \centering
     \resizebox{\linewidth}{!}{
@@ -311,7 +304,9 @@ According to the hardware validation and the black-box test, the system works we
             \hline
         \end{tabular}
     }
+    Sheet 1: User Cases
 \end{table}
+According to the hardware validation and the black-box test, the system works well and no unexpected results or bugs have been found.
 
 \section{Conclusion}
 
